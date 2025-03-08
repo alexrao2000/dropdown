@@ -74,6 +74,8 @@ const App: React.FC = () => {
         Confirm
       </button>
 
+      {/* For testing */}
+
       {/*<div>
         <h2>Multi Select</h2>
         <Dropdown

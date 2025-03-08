@@ -95,6 +95,7 @@ const Dropdown: React.FC<DropdownProps> = ({
   };
 
 
+  // Logic to handle when an option is selected
   const handleSelect = (option: string) => {
 
     const isSelected = multiple
@@ -122,7 +123,8 @@ const Dropdown: React.FC<DropdownProps> = ({
     );
   }
 
-  
+
+  // Select all or deselect all for multi selection
   const handleSelectAll = () => {
 
     if (localSelectedValues.length === options.length) {
