@@ -2,7 +2,11 @@ import React, { useState } from 'react';
 import Dropdown from './components/Dropdown';
 
 const App: React.FC = () => {
+
   const options = ['Option A', 'Option B', 'Option C', 'Option D', 'Option E', 'Option F', 'Option G', 'Option 1'];
+  
+  /* for performance testing. fyi performance was fine on my end, including select/deselect all */
+  // const massiveOptions = Array.from({ length: 10000 }, (_, idx) => `Option ${idx}`);
 
   // Add more if you want to create a new dropdown
   const [singleSelection, setSingleSelection] = useState(''); // For single selection example
