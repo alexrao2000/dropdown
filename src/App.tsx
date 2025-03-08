@@ -5,21 +5,20 @@ const App: React.FC = () => {
 
   const optionsSingle = ['Coke', 'Pepsi', 'Dr. Pepper', '7up', 'Sprite', 'Mountain Dew', 'Snapple', 'Mug'];
   const optionsMulti = ['Laffy Taffy', 'Skittles', 'M&Ms', 'Smarties', 'Reese\'s Cups', 'Jawbreakers', 'Hershey\'s', 'Jolly Ranchers'];
+  //const optionsMulti2 = ['Laffy Taffy', 'Skittles', 'M&Ms', 'Smarties', 'Reese\'s Cups', 'Jawbreakers', 'Hershey\'s', 'Jolly Ranchers'];
   
   /* for performance testing. fyi performance was fine on my end, including select/deselect all */
-  // const massiveOptions = Array.from({ length: 10000 }, (_, idx) => `Option ${idx}`);
+  //const massiveOptions = Array.from({ length: 10000 }, (_, idx) => `Option ${idx}`);
 
   // Add more if you want to create a new dropdown
   const [singleSelection, setSingleSelection] = useState(''); // For single selection example
   const [multiSelection, setMultiSelection] = useState<string[]>([]); // For multi selection example
+  //const [multiSelection2, setMultiSelection2] = useState<string[]>([]); // For multi selection example
 
-  const setSelection = (vals: string | string[]) => {
+  const setSelection = (setter: Function) => {
 
-    if (typeof vals === 'string') {
-      setSingleSelection(vals);
-    }
-    if (Array.isArray(vals)) {
-      setMultiSelection(vals);
+    return (vals: string | string[]) => {
+      setter(vals)
     }
 
   }
@@ -36,7 +35,7 @@ const App: React.FC = () => {
           multiple={false}
           selectedValue={singleSelection}
           showNone = {true}
-          onChange={setSelection}
+          onChange={setSelection(setSingleSelection)}
         />
       </div>
 
@@ -49,9 +48,22 @@ const App: React.FC = () => {
           selectedValues={multiSelection}
           truncateDisplayText={true} // I recommend leaving this as true always, it looks bad if you don't truncate it
           showSelectAll = {true}
-          onChange={setSelection}
+          onChange={setSelection(setMultiSelection)}
         />
       </div>
+
+      {/*<div>
+        <h2>Multi Select</h2>
+        <Dropdown
+          label="Select one or more"
+          options={optionsMulti2}
+          multiple
+          selectedValues={multiSelection2}
+          truncateDisplayText={true} // I recommend leaving this as true always, it looks bad if you don't truncate it
+          showSelectAll = {true}
+          onChange={setSelection(setMultiSelection2)}
+        />
+      </div>*/}
 
     </div>
 
