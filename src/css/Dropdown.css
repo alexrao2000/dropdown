@@ -1,0 +1,81 @@
+/* This is CSS for Dropdown.tsx, heading and container are in index.css */
+
+.dropdown-container {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-label {
+  margin-right: 8px;
+}
+
+.dropdown-toggle {
+  border: 1px solid #ccc;
+  border-radius: 7px;
+  padding: 8px;
+  cursor: pointer;
+  user-select: none;
+  width: 250px;
+  min-width: 250px
+}
+
+.dropdown-toggle:hover {
+  border-color: #646cff;
+}
+
+.truncate-text {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.expand-text {
+  white-space: normal;
+  word-break: break-word;
+}
+
+.dropdown-toggle.expand-text {
+  width: auto;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 999;
+  border: 1px solid #ccc;
+  background: #fff;
+  width: 100%;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.dropdown-item {
+  user-select: none;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background-color: #f0f0f0;
+}
+
+.selected-item {
+  background-color: #eaeaea;
+}
+
+.select-deselect-all {
+  user-select: none;
+  padding: 8px;
+  cursor: pointer;
+  border-bottom: 1px solid #ccc;
+}
+
+.select-deselect-all:hover {
+  background-color: #f0f0f0;
+}
+
+.checkbox {
+  margin-right: 8px
+}
