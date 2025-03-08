@@ -3,7 +3,8 @@ import Dropdown from './components/Dropdown';
 
 const App: React.FC = () => {
 
-  const options = ['Option A', 'Option B', 'Option C', 'Option D', 'Option E', 'Option F', 'Option G', 'Option 1'];
+  const optionsSingle = ['Coke', 'Pepsi', 'Dr. Pepper', '7up', 'Sprite', 'Mountain Dew', 'Snapple', 'Mug'];
+  const optionsMulti = ['Laffy Taffy', 'Skittles', 'M&Ms', 'Smarties', 'Reese\'s Cups', 'Jawbreakers', 'Hershey\'s', 'Jolly Ranchers'];
   
   /* for performance testing. fyi performance was fine on my end, including select/deselect all */
   // const massiveOptions = Array.from({ length: 10000 }, (_, idx) => `Option ${idx}`);
@@ -31,7 +32,7 @@ const App: React.FC = () => {
         <h2>Single Select</h2>
         <Dropdown
           label="Select one"
-          options={options}
+          options={optionsSingle}
           multiple={false}
           selectedValue={singleSelection}
           showNone = {true}
@@ -43,7 +44,7 @@ const App: React.FC = () => {
         <h2>Multi Select</h2>
         <Dropdown
           label="Select one or more"
-          options={options}
+          options={optionsMulti}
           multiple
           selectedValues={multiSelection}
           truncateDisplayText={true} // I recommend leaving this as true always, it looks bad if you don't truncate it
